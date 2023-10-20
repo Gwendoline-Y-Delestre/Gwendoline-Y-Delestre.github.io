@@ -19,6 +19,28 @@ function horreur() {
     lis.forEach((li) => {
         li.style.setProperty('--li-background-color', '#320000');
     });
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("json/horror.json")
+        console.log("ok")
+            .then(response => response.json())
+            .then(data => {
+                const watchedList = document.getElementById("watched-list");
+                const toWatchList = document.getElementById("to-watch-list");
+
+                data.watched.forEach(movie => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${movie.title} (${movie.year}) (Vu)`;
+                    watchedList.appendChild(listItem);
+                });
+
+                data.toWatch.forEach(movie => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${movie.title} (${movie.year}) (À Voir)`;
+                    toWatchList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error("Erreur de chargement des données : " + error));
+    });
 }
 
 function cartoon() {
