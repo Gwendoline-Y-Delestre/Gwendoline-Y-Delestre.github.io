@@ -1,0 +1,55 @@
+/* Réinitialisation des styles par défaut et styles de base pour la page */
+
+body,
+ul {
+  margin: 0%;
+  padding: 0;
+  list-style: none;
+}
+li {
+  margin: 0;
+  padding: 1%;
+  color: white;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Choisissez la police de caractères que vous préférez */
+}
+
+/* Styles pour la barre de navigation */
+.nav-bar {
+  background-color: #707070; /* Couleur de fond de la barre de navigation */
+
+  width: 100%; /* La barre de navigation occupe toute la largeur de la page */
+}
+
+.nav-bar ul {
+  display: flex; /* Pour aligner les éléments horizontalement */
+  justify-content: space-between; /* Pour répartir les éléments également */
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+    rgba(23, 47, 61, 1) 5px 10px 15px;
+}
+
+.nav-bar li {
+  margin: 0%;
+  border-radius: 10px;
+  flex: 1; /* Chaque élément occupe la même largeur */
+  text-align: center; /* Centrer le texte dans chaque élément */
+}
+
+.nav-bar li:hover {
+  background-color: rgb(225, 225, 225);
+  background: var(--li-background-color);
+}
+
+#accueil {
+  visibility: visible;
+  display: block;
+}
+#horreur {
+  /* visibility: hidden; */
+  display: none;
+}

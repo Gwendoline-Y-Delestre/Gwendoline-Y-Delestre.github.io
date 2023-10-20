@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <title>Movies</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <ul id="nav">
+        <li onclick="accueil()">
+          Accueil
+          <!-- <a href="index.html">Accueil</a> -->
+        </li>
+        <li onclick="horreur()">
+          Horreur
+          <!-- <a href="horror.html">Horreur</a> -->
+        </li>
+        <li id="cartoon" onclick="cartoon()">
+          Dessins Animés
+          <!-- <a>Dessins Animés</a> -->
+        </li>
+        <li id="comedie" onclick="comedie()">
+          Comédie
+          <!-- <a>Comédie</a> -->
+        </li>
+        <li id="drame" onclick="drame()">
+          Drame
+          <!-- <a>Drame</a> -->
+        </li>
+        <li id="thriller" onclick="thriller()">
+          Thriller
+          <!-- <a>Thriller</a> -->
+        </li>
+      </ul>
+    </div>
+    <div id="accueil">
+      <h2>Dernier films vus :</h2>
+      <ul id="last-seen"></ul>
+    </div>
+
+    <div id="horreur">
+      <div id="movies-watched">
+        <h2>Films Vus</h2>
+        <ul id="watched-list"></ul>
+      </div>
+      <div id="movies-to-watch">
+        <h2>Films à Voir</h2>
+        <ul id="to-watch-list"></ul>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
