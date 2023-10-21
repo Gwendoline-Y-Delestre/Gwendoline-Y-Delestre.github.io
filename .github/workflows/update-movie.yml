@@ -1,3 +1,4 @@
+---
 workflow "Update JSON" {
   on = "push"
   resolves = ["Update JSON"]
