@@ -31,7 +31,7 @@ function horreur() {
     //     showHeroes(superHeroes);
     // };
 
-    var requestURL = "Movies/json/horror.json";
+    var requestURL = "json/horror.json";
     var request = new XMLHttpRequest();
     request.open("GET", requestURL);
     request.responseType = "json"
