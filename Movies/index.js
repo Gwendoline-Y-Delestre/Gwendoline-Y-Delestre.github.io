@@ -19,28 +19,59 @@ function horreur() {
     lis.forEach((li) => {
         li.style.setProperty('--li-background-color', '#320000');
     });
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("json/horror.json")
-        console.log("ok")
-            .then(response => response.json())
-            .then(data => {
-                const watchedList = document.getElementById("watched-list");
-                const toWatchList = document.getElementById("to-watch-list");
+    var requestURL = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+    var request = new XMLHttpRequest();
+    request.open("GET", requestURL);
+    request.responseType = "json";
+    request.send();
+    request.onload = function () {
+        var superHeroes = request.response;
+        populateHeader(superHeroes);
+        showHeroes(superHeroes);
+    };
 
-                data.watched.forEach(movie => {
-                    const listItem = document.createElement("li");
-                    listItem.textContent = `${movie.title} (${movie.year}) (Vu)`;
-                    watchedList.appendChild(listItem);
-                });
+}
 
-                data.toWatch.forEach(movie => {
-                    const listItem = document.createElement("li");
-                    listItem.textContent = `${movie.title} (${movie.year}) (À Voir)`;
-                    toWatchList.appendChild(listItem);
-                });
-            })
-            .catch(error => console.error("Erreur de chargement des données : " + error));
-    });
+function populateHeader(jsonObj) {
+    var myH1 = document.createElement("h1");
+    myH1.textContent = jsonObj["squadName"];
+    header.appendChild(myH1);
+
+    var myPara = document.createElement("p");
+    myPara.textContent = "Hometown: " + jsonObj["homeTown"] + jsonObj["formed"];
+    header.appendChild(myPara);
+}
+function showHeroes(jsonObj) {
+    var heroes = jsonObj["members"];
+
+    for (var i = 0; i < heroes.length; i++) {
+        var myArticle = document.createElement("article");
+        var myH2 = document.createElement("h2");
+        var myPara1 = document.createElement("p");
+        var myPara2 = document.createElement("p");
+        var myPara3 = document.createElement("p");
+        var myList = document.createElement("ul");
+
+        myH2.textContent = heroes[i].name;
+        myPara1.textContent = "Secret identity: " + heroes[i].secretIdentity;
+        myPara2.textContent = "Age: " + heroes[i].age;
+        myPara3.textContent = "Superpowers:";
+
+        var superPowers = heroes[i].powers;
+        for (var j = 0; j < superPowers.length; j++) {
+            var listItem = document.createElement("li");
+            listItem.textContent = superPowers[j];
+            myList.appendChild(listItem);
+        }
+
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myList);
+
+        section.appendChild(myArticle);
+    }
 }
 
 function cartoon() {
