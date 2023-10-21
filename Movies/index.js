@@ -42,20 +42,21 @@ function horreur() {
     }
 
 }
-var section = document.getElementById("horreur");
 function showMovies(jsonObj) {
     var movies = jsonObj["horrorMovies"];
+    var section = document.getElementById("horreur");
+    section.innerHTML = ""; // Clear the content before adding new items
+    console.log(movies)
     for (var i = 0; i < movies.length; i++) {
         var mydiv = document.createElement("div");
-        var myH1 = document.createElement("h1")
+        var myH1 = document.createElement("h1");
         myH1.textContent = movies[i].title;
-
-
+        console.log(movies[i].title)
         var myPara = document.createElement("p");
-        myPara.textContent = "year: " + movies[i].year + "vu :  " + movies[i].seen;
+        myPara.textContent = "Year: " + movies[i].year + ", Vu : " + movies[i].seen;
         mydiv.appendChild(myH1);
         mydiv.appendChild(myPara);
-        section.appendChild(mydiv)
+        section.appendChild(mydiv);
     }
 }
 
