@@ -1,0 +1,28 @@
+{
+  "movies": [
+    {
+      "title": "Annabelle 1 ",
+      "year": 2012,
+      "genre": "horror",
+      "seen": true
+    },
+    {
+      "title": "Conjuring 1",
+      "year": 2012,
+      "genre": "horror",
+      "seen": true
+    },
+    {
+      "title": "Beetlejuice 2",
+      "year": 2024,
+      "genre": "horro",
+      "seen": false
+    },
+    {
+      "title": "Sinister",
+      "year": 2012,
+      "genre": "horror",
+      "seen": false
+    }
+  ]
+}

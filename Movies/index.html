@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <!-- <link href="https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json" /> -->
-    <link href="json/horror.json" />
+    <link href="movies.json" />
     <!-- pour eviter : favicon.ico is throwing a 404  -->
     <link rel="icon" href="data:," />
     <title>Movies</title>
@@ -39,8 +39,18 @@
       </ul>
     </div>
     <div id="accueil">
-      <h2>Dernier films vus :</h2>
-      <ul id="last-seen"></ul>
+      <form id="movieForm">
+        <label for="title">Titre :</label>
+        <input type="text" id="title" required />
+        <br />
+        <label for="year">Année :</label>
+        <input type="number" id="year" required />
+        <br />
+        <label for="seen">Vu :</label>
+        <input type="checkbox" id="seen" />
+        <br />
+        <button type="submit">Ajouter un film</button>
+      </form>
     </div>
 
     <div id="horreur"></div>
