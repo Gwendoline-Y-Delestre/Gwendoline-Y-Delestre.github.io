@@ -55,6 +55,7 @@ function showMovies(jsonObj) {
         myPara.textContent = "year: " + movies[i].year + "vu :  " + movies[i].seen;
         mydiv.appendChild(myH1);
         mydiv.appendChild(myPara);
+        section.appendChild(mydiv)
     }
 }
 
