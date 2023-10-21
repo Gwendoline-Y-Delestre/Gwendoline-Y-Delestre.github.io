@@ -19,6 +19,7 @@ function horreur() {
     lis.forEach((li) => {
         li.style.setProperty('--li-background-color', '#320000');
     });
+
     var requestURL = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
     var request = new XMLHttpRequest();
     request.open("GET", requestURL);
@@ -31,7 +32,7 @@ function horreur() {
     };
 
 }
-
+var header = document.getElementById("horreur");
 function populateHeader(jsonObj) {
     var myH1 = document.createElement("h1");
     myH1.textContent = jsonObj["squadName"];
@@ -70,7 +71,7 @@ function showHeroes(jsonObj) {
         myArticle.appendChild(myPara3);
         myArticle.appendChild(myList);
 
-        section.appendChild(myArticle);
+        header.appendChild(myArticle);
     }
 }
 
