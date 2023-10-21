@@ -36,7 +36,7 @@ function horreur() {
     request.open("GET", requestURL);
     request.responseType = "json"
     request.send();
-    ReadableStreamBYOBRequest.onload = function () {
+    request.onload = function () {
         var allMovies = request.response;
         showMovies(allMovies);
     }
