@@ -6,6 +6,6 @@ workflow "Update JSON" {
 
 action "Update JSON" {
   uses = "marvinpinto/action-automatic-releases@latest"
-  secrets = ["GITHUB_TOKEN"]
+  secrets = ["MOVIES_TOKEN"]
   args = "node index.js"
 }
