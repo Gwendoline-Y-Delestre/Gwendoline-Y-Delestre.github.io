@@ -73,11 +73,13 @@ document.getElementById("movieForm").addEventListener("submit", function (e) {
 
     var title = document.getElementById("title").value;
     var year = document.getElementById("year").value;
+    var genre = document.getElementById("genre").value;
     var seen = document.getElementById("seen").checked;
 
     var newMovie = {
         title: title,
         year: year,
+        genre: genre,
         seen: seen
     };
 
